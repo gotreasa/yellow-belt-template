@@ -41,7 +41,7 @@ Update the values for:
 
 **Note 1**: the sonar.organization should be the value you find in <https://sonarcloud.io/account/organizations>.  
 **Note 2**: the sonar.projectKey must be unique across all of sonarcloud.io.  I usually take the organisation name and append the name of the repository to it.
-
+  
 ## Test the configuration works
 
 To test out the Sonar configuration we need to do three things:
@@ -99,3 +99,7 @@ Now let's update the pre-push hook and add the following line after npm test:
 ```sh
 npx env-cmd sonar-scanner
 ```
+
+## Verify the Sonar Scanner runs on Push of code
+
+Now that you made all of the changes completed commit it and push it.
