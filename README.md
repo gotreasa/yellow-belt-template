@@ -39,7 +39,7 @@ Update the values for:
 * sonar.organization
 * sonar.projectKey
 
-**Note 1**: the sonar.organization should be the value you find in <https://sonarcloud.io/account/organizations>.
+**Note 1**: the sonar.organization should be the value you find in <https://sonarcloud.io/account/organizations>.  
 **Note 2**: the sonar.projectKey must be unique across all of sonarcloud.io.  I usually take the organisation name and append the name of the repository to it.
 
 ## Test the configuration works
@@ -52,13 +52,13 @@ To test out the Sonar configuration we need to do three things:
 npm test
 ```
 
-1. Set up the SONAR_TOKEN with the token you generated
+2. Set up the SONAR_TOKEN with the token you generated
 
 ```sh
 export SONAR_TOKEN=#Enter the token you generated
 ```
 
-1. Run the Sonar Scanner
+3. Run the Sonar Scanner
 
 ```sh
 npx sonar-scanner
