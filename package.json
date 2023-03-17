@@ -11,5 +11,8 @@
     "url": "git@github.ibm.com:xpfarm/yellow-belt-template.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "snyk": "^1.1119.0"
+  }
 }

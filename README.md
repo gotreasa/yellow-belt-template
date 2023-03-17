@@ -1,3 +1,7 @@
 # Instructions
 
-Open up a branch to see the details of how to set up the tool
+Setting up Snyk
+
+```sh
+npm install snyk --save-dev
+```
