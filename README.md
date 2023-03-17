@@ -62,3 +62,23 @@ To include the development dependencies run:
 ```sh
 npx snyk monitor --dev
 ```
+
+### Troubleshooting
+
+When running:
+
+```sh
+npx snyk test --dev
+```
+
+Getting the following error
+
+```sh
+Dependency <Package Name> was not found in package-lock.json. Your package.json and package-lock.json are probably out of sync. Please run "npm install" and try again.
+```
+
+A solution is to revert the package-lock to an older file format, by running:
+
+```sh
+npm install --lockfile-version=2 
+```
