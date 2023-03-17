@@ -1,4 +1,19 @@
-# Instructions
+# What is ESLint and Prettier, and what do they do?
+
+ESLint statically analyzes your code to help you detect formatting issues and find code inconsistencies.\
+Prettier does not check your code quality, it just serves as a code formatter.
+
+These both have similar objectives:
+
+- Makes code more consistent in itself and across team members
+- Detects problematic code patterns that could lead to potential bugs
+
+# What is lint-staged, and what does it do?
+
+With lint-staged, executing the command git commit automatically runs the linter against files staged for commit.\
+Once you are done with the code, you can stage the modified files and run the linter before committing them.
+
+# Installation instructions
 
 Install eslint, prettier, husky and lint-staged as a dev dependency
 
@@ -33,12 +48,12 @@ Create a .eslintrc.js file to configure eslint
 
 ```javascript
 module.exports = {
-  extends: ["airbnb-base", "plugin:prettier/recommended"],
-  plugins: ["prettier"],
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  plugins: ['prettier'],
   rules: {
-    "max-len": "off",
-    "no-underscore-dangle": 0,
-    "no-unused-vars": ["error", { argsIgnorePattern: "next" }],
+    'max-len': 'off',
+    'no-underscore-dangle': 0,
+    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
     camelcase: 0,
   },
 };
