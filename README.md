@@ -1,3 +1,12 @@
 # Instructions
 
-Open up a branch to see the details of how to set up the tool
+To demo this cookiecutter template you'll need two prerequisites:
+
+* cookiecutter
+* gh
+
+To run the cookiecutter you need to be in the parent directory and run:
+
+```sh
+cookiecutter yellow-belt-template
+```

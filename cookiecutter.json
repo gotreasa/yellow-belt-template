@@ -1,0 +1,8 @@
+{
+    "repo_name": "demo-project",
+    "description": "Demo project",
+    "github_url": ["github.ibm.com", "github.com"],
+    "github_org": "xpfarm",
+
+    "license": ["AGPL", "Apache-2.0", "GPL", "ISC", "MIT"]
+}
