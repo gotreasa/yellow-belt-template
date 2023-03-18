@@ -103,7 +103,7 @@ npx env-cmd sonar-scanner
 You can do this by running:
 
 ```sh
-npx env-cmd sonar-scanner
+npx husky add .husky/pre-push 'npx env-cmd sonar-scanner'
 ```
 
 ## Verify the Sonar Scanner runs on Push of code
