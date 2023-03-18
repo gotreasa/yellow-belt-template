@@ -100,6 +100,12 @@ Now let's update the pre-push hook and add the following line after npm test:
 npx env-cmd sonar-scanner
 ```
 
+You can do this by running:
+
+```sh
+npx env-cmd sonar-scanner
+```
+
 ## Verify the Sonar Scanner runs on Push of code
 
 Now that you made all of the changes completed commit it and push it.
