@@ -11,3 +11,11 @@ To ensure that Husky is properly installed when `npm install` is run, then a pre
 ```sh
 npm pkg set scripts.prepare="husky install"
 ```
+
+Now set up the pre-push hook to run your tests by running:
+
+```sh
+npx husky add .husky/pre-push 'npm test'
+```
+
+Well done on setting up your first hook!
