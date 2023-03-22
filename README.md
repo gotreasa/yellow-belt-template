@@ -18,19 +18,25 @@ Install Sonar library
 npm install sonarqube-scanner --save-dev
 ```
 
+&nbsp;
+
 ## Update Gitignore
 
-You will need to update your .gitignore file to include ignore files for Sonar - <https://www.toptal.com/developers/gitignore>. It should include NodeJs, SonarQube, and your operating system.
+You can follow the instructions on the gitignore branch to setup a .gitignore file that excludes everything that it should.
+
+&nbsp;
 
 ## Authentication
 
 For Sonar scanning to work, you'll need to be able to authenticate with sonarcloud.io. Log into <https://sonarcloud.io/account/security> using your public Github account. Then generate a token and store it in your 1Password account.
 
+&nbsp;
+
 ## Set up your Sonar project properties
 
 You will need to create sonar-project.properties. In it you'll need to update the values to match your repository
 
-```sonar
+```properties
 sonar.host.url=https://sonarcloud.io
 sonar.javascript.coveragePlugin=lcov
 sonar.javascript.lcov.reportPaths=coverage/lcov.info
@@ -50,7 +56,9 @@ Update the values for:
 - sonar.projectKey
 
 **Note 1**: the sonar.organization should be the value you find in <https://sonarcloud.io/account/organizations>.  
-**Note 2**: the sonar.projectKey must be unique across all of sonarcloud.io. I usually take the organisation name and append the name of the repository to it.
+**Note 2**: the sonar.projectKey must be unique across all of sonarcloud.io. I usually take the github organisation name and append the name of the repository to it.
+
+&nbsp;
 
 ## Test the configuration works
 
@@ -81,6 +89,8 @@ INFO: ANALYSIS SUCCESSFUL, you can find the results at: https://sonarcloud.io/da
 ```
 
 You should be able to open the link and verify that you have 100% coverage.
+  
+&nbsp;
 
 ## Integrate the Sonar Scanner into the pre-push hook
 
@@ -116,6 +126,22 @@ You can do this by running:
 npx husky add .husky/pre-push 'npx env-cmd sonar-scanner'
 ```
 
+&nbsp;
+
 ## Verify the Sonar Scanner runs on Push of code
 
 Now that you made all of the changes completed commit it and push it.
+
+&nbsp;
+
+## Set up your New Code definition
+
+In the sonar-project.properties you may have noticed that you had:
+
+```properties
+sonar.qualitygate.wait=false
+```
+
+Which is currently set to false.  You can enable the quality gate by setting it to true.  This will mean that if you're running the sonarcloud-scanner you will fail if the quality gate doesn't pass.
+
+For sonar to evaluate the quality gate it needs to know what is new code.  You can set your new code definition by going to the Administration tab on your project page and opening New Code.  Then choose the option that you prefer.  A guide for this is available on <https://docs.sonarcloud.io/improving/new-code-definition/>.
