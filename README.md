@@ -1,6 +1,14 @@
 # Setup Sonar
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=bugs)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
 
 ## Install
 
