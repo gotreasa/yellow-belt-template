@@ -1,5 +1,5 @@
 {
-  "name": "{{cookiecutter.repo_name}}",
+  "name": "{{cookiecutter.project_slug}}",
   "version": "1.0.0",
   "description": "{{cookiecutter.description}}",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@{{cookiecutter.github_url}}:{{cookiecutter.github_org}}/{{cookiecutter.repo_name}}.git"
+    "url": "git@{{cookiecutter.github_url}}:{{cookiecutter.github_org}}/{{cookiecutter.project_slug}}.git"
   },
   "author": "",
   "license": "{{cookiecutter.license}}"
