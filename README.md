@@ -1,5 +1,7 @@
 # Setup Sonar
 
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gotreasa_yellow-belt-template&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gotreasa_yellow-belt-template)
+
 ## Install
 
 Install Sonar library
@@ -10,15 +12,15 @@ npm install sonarqube-scanner --save-dev
 
 ## Update Gitignore
 
-You will need to update your .gitignore file to include ignore files for Sonar - <https://www.toptal.com/developers/gitignore>.  It should include NodeJs, SonarQube, and your operating system.
+You will need to update your .gitignore file to include ignore files for Sonar - <https://www.toptal.com/developers/gitignore>. It should include NodeJs, SonarQube, and your operating system.
 
 ## Authentication
 
-For Sonar scanning to work, you'll need to be able to authenticate with sonarcloud.io.  Log into <https://sonarcloud.io/account/security> using your public Github account.  Then generate a token and store it in your 1Password account.
+For Sonar scanning to work, you'll need to be able to authenticate with sonarcloud.io. Log into <https://sonarcloud.io/account/security> using your public Github account. Then generate a token and store it in your 1Password account.
 
 ## Set up your Sonar project properties
 
-You will need to create sonar-project.properties.  In it you'll need to update the values to match your repository
+You will need to create sonar-project.properties. In it you'll need to update the values to match your repository
 
 ```sonar
 sonar.host.url=https://sonarcloud.io
@@ -35,13 +37,13 @@ sonar.qualitygate.wait=false
 
 Update the values for:
 
-* sonar.links.scm
-* sonar.organization
-* sonar.projectKey
+- sonar.links.scm
+- sonar.organization
+- sonar.projectKey
 
 **Note 1**: the sonar.organization should be the value you find in <https://sonarcloud.io/account/organizations>.  
-**Note 2**: the sonar.projectKey must be unique across all of sonarcloud.io.  I usually take the organisation name and append the name of the repository to it.
-  
+**Note 2**: the sonar.projectKey must be unique across all of sonarcloud.io. I usually take the organisation name and append the name of the repository to it.
+
 ## Test the configuration works
 
 To test out the Sonar configuration we need to do three things:
@@ -74,7 +76,7 @@ You should be able to open the link and verify that you have 100% coverage.
 
 ## Integrate the Sonar Scanner into the pre-push hook
 
-You will need to have the SONAR_TOKEN set up so that it always works without the need to set it up manually each time.  We could put it in the pre-push file but it would be a security exposure.  Instead it should be stored in the .env file, and loaded from there.  So let's set up the .env and .env.sample.
+You will need to have the SONAR_TOKEN set up so that it always works without the need to set it up manually each time. We could put it in the pre-push file but it would be a security exposure. Instead it should be stored in the .env file, and loaded from there. So let's set up the .env and .env.sample.
 
 Create the .env.sample with:
 
