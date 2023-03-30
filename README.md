@@ -119,3 +119,36 @@ npx husky add .husky/pre-push 'npx env-cmd sonar-scanner'
 ## Verify the Sonar Scanner runs on Push of code
 
 Now that you made all of the changes completed commit it and push it.
+
+## Integrate the Sonar Scanner into Travis CI
+
+1. Enable the GitHub repository in Travis via your user profile
+2. Add the SONAR_TOKEN as an environment variable in Travis
+3. Create a travis.yml file with a stage for sonar-scanner
+
+```yaml
+os: linux
+language: node_js
+dist: focal
+install:
+  - npm ci
+cache:
+  directories:
+    - '~/.npm'
+    - '~/.cache'
+  npm: true
+addons:
+  sonarcloud: true
+stages:
+  - name: Unit test & sonar-scanner
+jobs:
+  include:
+    - stage: Unit test & sonar-scanner
+      script:
+        - npm test
+        - sonar-scanner -D sonar.login=$SONAR_TOKEN
+      name: Unit test & sonar-scanner
+      env: Unit test & sonar-scanner
+```
+
+4. Commit and push this file to your remote GitHub repository
