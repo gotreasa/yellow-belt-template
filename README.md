@@ -29,6 +29,7 @@ The pre hook is quite useful to check if anything needs to be validated before t
 - installing the packages you need
 - setting up any local and remote secrets
 - configuring the sonar project
+- enable your CI pipeline
 - commit the code
 - push the code up
 - run tests to ensure that everything is set up correctly
