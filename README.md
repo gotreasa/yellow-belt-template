@@ -73,3 +73,13 @@ Then after all of the files are looking correct, move on to set up your pre and 
 ## New repository
 
 For a new repository, you can start off by setting up all of the files and folders that you need and then follow the instructions for an existing project starting off with the cookiecutter.json step.
+
+## Troubleshooting
+
+A common problem that comes up is that the cookiecutter fails due to a particular file.  You need to make sure that your template does not contain the following files and folders as they have `{{}}` in the files that confuses cookiecutter.
+
+- node_modules
+- coverage
+- .eslintcache
+
+These are all generated files, so they can be deleted without a problem.
