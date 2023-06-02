@@ -18,13 +18,13 @@ Once you are done with the code, you can stage the modified files and run the li
 Install eslint, prettier, husky and lint-staged as a dev dependency
 
 ```sh
-npm install husky prettier lint-staged eslint --save-dev
+npm install eslint prettier husky lint-staged --save-dev
 ```
 
 Optionally install additional configs, types and plugins for eslint
 
 ```sh
-npm install eslint-plugin-prettier eslint-plugin-import eslint-plugin-yml eslint-config-prettier eslint-config-airbnb-base @types/eslint @types/eslint-plugin-prettier @types/prettier --save-dev
+npm install eslint-plugin-prettier eslint-plugin-import eslint-plugin-yml eslint-config-prettier eslint-config-airbnb-base @types/eslint @types/eslint-plugin-prettier @types/prettier eslint-plugin-jest eslint-plugin-jest-formatting --save-dev
 ```
 
 To ensure that Husky is properly installed when `npm install` is run, then a prepare script is set up so that `husky install` is run
@@ -33,28 +33,46 @@ To ensure that Husky is properly installed when `npm install` is run, then a pre
 npm pkg set scripts.prepare="husky install"
 ```
 
+After this script has been added, run
+
+```sh
+npm install
+```
+
 # Setting up eslint
 
-Create npm scripts in your package.json file to verify and fix files using eslint
+Create an npm script to verify files using eslint
 
-```json
-"scripts": {
-  "eslint:fix": "eslint --cache --fix",
-  "eslint:verify": "eslint .",
-}
+```sh
+npm pkg set scripts.eslint:verify="eslint ."
+```
+
+Create an npm script to fix files using eslint
+
+```sh
+npm pkg set scripts.eslint:fix="eslint --cache --fix"
 ```
 
 Create a .eslintrc.js file to configure eslint
 
 ```javascript
 module.exports = {
-  extends: ['airbnb-base', 'plugin:prettier/recommended'],
-  plugins: ['prettier'],
+  extends: [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
+    "plugin:jest-formatting/recommended",
+  ],
+  plugins: ["prettier", "jest", "jest-formatting"],
   rules: {
-    'max-len': 'off',
-    'no-underscore-dangle': 0,
-    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    "max-len": "off",
+    "no-underscore-dangle": 0,
+    "no-unused-vars": ["error", { argsIgnorePattern: "next" }],
     camelcase: 0,
+  },
+  env: {
+    jest: true,
   },
 };
 ```
@@ -64,17 +82,21 @@ Create a .eslintignore file to ignore specific files/folders
 ```sh
 # ignore artifacts:
 node_modules
+coverage
 ```
 
 # Setting up prettier
 
-Create npm scripts in your package.json file to verify and fix files using prettier
+Create an npm script to verify files using prettier
 
-```json
-"scripts": {
-  "prettier:fix": "prettier --write",
-  "prettier:verify": "prettier --check .",
-}
+```sh
+npm pkg set scripts.prettier:verify="prettier --check ."
+```
+
+Create an npm script to fix files using prettier
+
+```sh
+npm pkg set scripts.prettier:fix="prettier --write"
 ```
 
 Create a .prettierrc file to configure prettier
@@ -85,8 +107,7 @@ Create a .prettierrc file to configure prettier
   "printWidth": 80,
   "tabWidth": 2,
   "trailingComma": "all",
-  "semi": true,
-  "singleQuote": true
+  "semi": true
 }
 ```
 
@@ -95,6 +116,7 @@ Create a .prettierignore file to ignore specific files/folders
 ```sh
 # ignore artifacts:
 node_modules
+coverage
 ```
 
 # Setting up lint-staged
@@ -105,7 +127,7 @@ Create a lint-staged object in your package.json file to trigger eslint and pret
 "lint-staged": {
   "*.js": "npm run eslint:fix",
   "*.{js,css,md,yml,json,code-snippets}": "npm run prettier:fix"
-},
+}
 ```
 
 Create a husky pre-commit script to execute lint-staged on commit

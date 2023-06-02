@@ -1,2 +1,3 @@
 # ignore artifacts:
 node_modules
+coverage
