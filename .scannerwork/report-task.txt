@@ -1,0 +1,7 @@
+organization=gotreasa
+projectKey=gotreasa_yellow-belt-template
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.39281
+dashboardUrl=https://sonarcloud.io/dashboard?id=gotreasa_yellow-belt-template
+ceTaskId=AYcKOTQLZ7kZpkTZNYKm
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYcKOTQLZ7kZpkTZNYKm
