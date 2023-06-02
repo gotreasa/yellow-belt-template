@@ -14,6 +14,12 @@ Configure Commitlint
 echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 ```
 
+Set up the Commit Message hook so that commit lint is invoked when you commit a change
+
+```sh
+npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
+```
+
 Test out Commitlint by trying out a bad commit message
 
 ```sh
