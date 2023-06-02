@@ -105,7 +105,7 @@ SONAR_TOKEN=
 Create the .env with:
 
 ```sh
-export SONAR_TOKEN=#Enter the token you generated
+SONAR_TOKEN=#Enter the token you generated - removing the hash after the equals
 ```
 
 To be able to automatically load the SONAR_TOKEN we will use env-cmd library
