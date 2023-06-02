@@ -131,7 +131,7 @@ os: linux
 language: node_js
 dist: focal
 install:
-  - npm ci
+  - npm i
 cache:
   directories:
     - '~/.npm'
