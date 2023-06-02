@@ -4,7 +4,7 @@ echo "🏁  Starting the cookie cutter script"
 gh repo create {{cookiecutter.github_url}}/{{cookiecutter.github_org}}/{{cookiecutter.project_slug}} --public
 git init
 git remote add origin git@{{cookiecutter.github_url}}:{{cookiecutter.github_org}}/{{cookiecutter.project_slug}}.git
-
+git branch -M main
 echo "ℹ️  Starting installing the NPM packages"
 npm install
 echo "✅  Starting installing the NPM packages"
